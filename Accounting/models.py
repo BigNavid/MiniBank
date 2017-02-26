@@ -1,15 +1,10 @@
 from django.db import models
 
 
-class Periods(models.Model):
-    days = models.IntegerField(primary_key=True, unique=True, db_index=True)
-    name = models.CharField(max_length=255)
-
-
 class IncomeSource(models.Model):
     name = models.CharField(max_length=255, db_index=True, unique=True,primary_key=True)
     amount = models.BigIntegerField()
-    period = models.ForeignKey(Periods, on_delete=models.CASCADE)
+    period = models.IntegerField()
 
 
 class CreditCard(models.Model):
