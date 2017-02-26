@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add income source</title>
+</head>
+<body>
+    <div class="container">
+        <form method="post" action="">
+            {% csrf_token %}
+            {% for item in form %}
+                <div class="form-row">
+                    <div class="form-label">
+                        {{ item.label }}
+                    </div>
+                    <div class="form-input">
+                        {{ item }}
+                    </div>
+                </div>
+            {% endfor %}
+            <button class="submit-btn" type="submit">ارسال</button>
+        </form>
+    </div>
+</body>
+</html>
