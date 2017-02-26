@@ -17,6 +17,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from Accounting import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^ShowCreditCard/', view=views.ShowCreditCard(), name='ShowCreditCard'),
+
 ]
