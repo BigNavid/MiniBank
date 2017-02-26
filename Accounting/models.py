@@ -28,7 +28,7 @@ class Transaction(models.Model):
 
 
 class CheckLeaf(models.Model):
-    checkleaf_id = models.BigIntegerField(primary_key=True, unique=True, db_index=True)
+    id = models.BigIntegerField(primary_key=True, unique=True, db_index=True)
     source_creditcard = models.ForeignKey(CreditCard, on_delete=models.CASCADE)
     destination_creditcard = models.ForeignKey(CreditCard, on_delete=models.CASCADE)
     amount = models.BigIntegerField(default=0,blank=True,null=True)
