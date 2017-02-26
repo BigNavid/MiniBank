@@ -20,8 +20,8 @@ class CreditCard(models.Model):
 
 class Transaction(models.Model):
     id = models.BigIntegerField(primary_key=True, unique=True, db_index=True)
-    source_creditcard = models.ForeignKey(CreditCard, on_delete=models.CASCADE)
-    destination_creditcard = models.ForeignKey(CreditCard, on_delete=models.CASCADE)
+    source_creditcard = models.ForeignKey(CreditCard, on_delete=models.CASCADE, related_name='TransactionSource')
+    destination_creditcard = models.ForeignKey(CreditCard, on_delete=models.CASCADE, related_name='TransactionDestination')
     behalf = models.CharField(max_length=255)
     amount = models.BigIntegerField()
     date_time = models.DateField(auto_now_add=True)
@@ -29,8 +29,8 @@ class Transaction(models.Model):
 
 class CheckLeaf(models.Model):
     id = models.BigIntegerField(primary_key=True, unique=True, db_index=True)
-    source_creditcard = models.ForeignKey(CreditCard, on_delete=models.CASCADE)
-    destination_creditcard = models.ForeignKey(CreditCard, on_delete=models.CASCADE)
+    source_creditcard = models.ForeignKey(CreditCard, on_delete=models.CASCADE, related_name='CreditSource')
+    destination_creditcard = models.ForeignKey(CreditCard, on_delete=models.CASCADE, related_name='CreditDestination')
     amount = models.BigIntegerField(default=0,blank=True,null=True)
     date_time = models.DateField(auto_now_add=True)
 
