@@ -2,7 +2,7 @@ from django.db import models
 
 
 class IncomeSource(models.Model):
-    name = models.CharField(max_length=255, db_index=True, unique=True,primary_key=True)
+    name = models.CharField(max_length=255, db_index=True, unique=True, primary_key=True)
     amount = models.BigIntegerField()
     period = models.IntegerField()
 
