@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block load_file %}
+    <link href="{% static 'css/add_income_source.css'%}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <div class="form-wrapper center-right">
+        {% for item in form %}
+            {% csrf_token %}
+            <div class="form_item">
+                <div class="label font">
+                    {{ item.label }}
+                </div>
+                <div class="input">
+                    {{ item }}
+                </div>
+            </div>
+        {% endfor %}
+        <input type="submit" value="ارسال" class="submit-button">
+    </div>
+
+{% endblock %}
