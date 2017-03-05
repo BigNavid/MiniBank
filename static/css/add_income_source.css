@@ -1,0 +1,42 @@
+
+.center-right{
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+
+.middle{
+    display: inline-block;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.test{
+    display: inline-block;
+}
+
+.left-direction{
+    direction: ltr;
+}
+
+.green{
+    background-color: #7aba7b;
+}
+
+
+.form-wrapper{
+    margin-top: 1cm;
+    margin-right: 1cm;
+    width: 6cm;
+    height: 6cm;
+}
+
+
+
+
+
