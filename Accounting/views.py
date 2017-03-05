@@ -21,3 +21,12 @@ def add_income_source(request):
         form = AddIncomeSource()
     context = {'form':form}
     return render(request, 'add_income_source.html', context)
+
+
+
+def show_costs_graphical(request):
+    transactions = None
+    #TODO: Uncomment this
+    # transactions = Transaction.objects.all()
+    context = {'CreditCards': transactions}
+    return render(request, 'ShowCostsGraphical.html', context=context)
